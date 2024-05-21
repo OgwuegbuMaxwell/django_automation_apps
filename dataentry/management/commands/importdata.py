@@ -6,6 +6,8 @@ import csv
 
 from django.db import DataError
 
+from dataentry.utils import check_csv_errors
+
 
 
 ######################################################################
@@ -53,39 +55,10 @@ class Command(BaseCommand):
         file_path = kwargs['file_path']
         model_name = kwargs['model_name'].capitalize()
         
-        # Search for the model across all installed apps
-        model = None
-        for app_config in apps.get_app_configs():
-            # Try to search for the model
-            try:
-                model = apps.get_model(app_config.label, model_name)
-                break # stop searching once the model is found
-            except LookupError:
-                continue # model not found in this app, continue searching in the next app
-        
-        if not model:
-            raise CommandError(f'Model "{model_name}" not found in any app!')
-        
-        
-        
-        # get all the field names of that model we found
-        # Exclude the id field
-        model_fields = [ field.name for field in model._meta.fields if field.name != 'id']
-        # print('Model Fields:')
-        # print(model_fields)
-        
+        model = check_csv_errors(file_path, model_name)
         
         with open(file_path, 'r') as file:
-            reader = csv.DictReader(file)
-            # print(reader)
-            csv_header = reader.fieldnames # get all the header of the csv file
-            
-            
-            # Compare CSV header with model's field names
-            if csv_header != model_fields:
-                raise DataError(f"CSV file does not match with the {model_name} table fields.")
-            
-            
+            reader = reader = csv.DictReader(file)
             for row in reader:
                 # print(row) : output = {'roll_no': '10050', 'name': 'James Turner', 'age': '19'}
                 model.objects.create(**row)
