@@ -4,6 +4,8 @@ from django.apps import apps
 
 import csv
 
+from django.db import DataError
+
 
 
 ######################################################################
@@ -64,9 +66,26 @@ class Command(BaseCommand):
         if not model:
             raise CommandError(f'Model "{model_name}" not found in any app!')
         
+        
+        
+        # get all the field names of that model we found
+        # Exclude the id field
+        model_fields = [ field.name for field in model._meta.fields if field.name != 'id']
+        # print('Model Fields:')
+        # print(model_fields)
+        
+        
         with open(file_path, 'r') as file:
             reader = csv.DictReader(file)
             # print(reader)
+            csv_header = reader.fieldnames # get all the header of the csv file
+            
+            
+            # Compare CSV header with model's field names
+            if csv_header != model_fields:
+                raise DataError(f"CSV file does not match with the {model_name} table fields.")
+            
+            
             for row in reader:
                 # print(row) : output = {'roll_no': '10050', 'name': 'James Turner', 'age': '19'}
                 model.objects.create(**row)
