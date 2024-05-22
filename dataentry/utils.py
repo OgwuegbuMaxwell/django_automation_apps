@@ -1,7 +1,10 @@
 import csv
+import os
 from django.apps import apps
 from django.core.management.base import CommandError
 from django.db import DataError
+import datetime
+
 
 # email message
 # email message takes 4 parameters
@@ -61,12 +64,32 @@ def check_csv_errors(file_path, model_name):
 
 
 
-def send_email_notifictation(mail_subject, message, to_email):
+def send_email_notifictation(mail_subject, message, to_email, attachment=None):
     try:
         from_email = settings.DEFAULT_FROM_EMAIL
         mail = EmailMessage(mail_subject, message, from_email, to=[to_email])
+        if attachment is not None:
+            mail.attach_file(attachment)
         mail.send()
     except Exception as e:
         raise e
 
+
+
+
+
+def generate_csv_file(model_name):
+    
+    # generate the timestamp of current date and time
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+
+    # define the csv file name/path
+    
+    export_dir = 'exported_data'
+    
+    file_name = f'imported_{model_name}_data_{timestamp}.csv'
+    # print(file_name)
+    file_path = os.path.join(settings.MEDIA_ROOT, export_dir, file_name)
+    # print("File path = >", file_path)
+    return file_path
 
