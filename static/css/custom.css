@@ -1,0 +1,21 @@
+
+
+
+/* export data page */
+
+.custom-container {
+    margin-left: 100px; /* Adjust the value to your desired margin */
+    margin-right: 100px; /* Adjust the value to your desired margin */
+  }
+
+  .form-container{
+      max-width: 40rem !important;
+      margin: auto; /* Centers the container horizontally */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow effect */
+      padding: 20px; /* Adds some padding inside the container */
+      background-color: white; /* Adds a background color */
+      border-radius: 8px; /* Optional: adds rounded corners */
+
+  }
+
+
