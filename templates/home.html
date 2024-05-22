@@ -39,7 +39,7 @@
 
 
 
-        
+{% if user.is_authenticated %}        
 <div class="container" style="padding: 50px;">
   <h2 class="text-center">Automate The Boring Stuff With Django</h2>
   <div class="row pt-5">
@@ -128,8 +128,34 @@
           </a>
       </div>
   </div>
+
+{%else%}
+
+<div class="home-info">
+
+  <h2 class="text-center mt-3">Automate the Boring Stuff with Django</h2>
+  <div style="max-width:40rem; margin:auto" class="mt-2">
+    <p class="lead text-center text-muted">
+      Automate the Boring Stuff with Django dives into the realm of streamlining and simplifying 
+      repetitive tasks through the powerful Django web framework. 
+    </p>
+  </div>
+
+  <div style="max-width:40rem; margin:auto; display:flex; justify-content:center;" class="mt-2">
+    <a class="float-right btn btn-primary " href="{% url 'login' %}">LOGIN</a>
+    &nbsp;
+    <a class="float-right btn btn-outline-success" href="{% url 'register' %}">REGISTER</a>
+  </div>
+
 </div>
-        
+{%endif%}
+
+
+
+
+</div>
+
+
     
 
 

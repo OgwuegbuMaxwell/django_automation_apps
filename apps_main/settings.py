@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dataentry',
     'uploads',
+    
+    # Crispy form
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -162,4 +166,10 @@ DEFAULT_FROM_EMAIL = 'Automate with Django <max.django.foodonline@gmail.com>'
 DEFAULT_TO_EMAIL = 'ogwuegbumaxwell@gmail.com'
 
 
+
+
+# crispy form
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 

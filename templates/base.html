@@ -8,7 +8,11 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
     <link href="{% static "css/custom.css" %}" rel="stylesheet">
+
+
     <title>Hello, world!</title>
   </head>
 <body>
@@ -17,11 +21,19 @@
 <nav class="navbar navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="{% url 'home' %}">Automate with Django</a>
+      {% if user.is_authenticated %}
+      <!-- show logout -->
       <div>
-        <a class="float-right text-decoration-none text-dark" href="#">Login</a>
-        &nbsp;
-        <a class="float-right btn btn-success" href="#">Register</a>
+        Logged in as: <b>{{user}}</b>
+        <a class="float-right btn btn-outline-danger" href="{% url 'logout' %}">Logout</a>
       </div>
+      {%else%}
+      <div>
+        <a class="float-right text-decoration-none text-dark" href="{% url 'login' %}">Login</a>
+        &nbsp;
+        <a class="float-right btn btn-success" href="{% url 'register' %}">Register</a>
+      </div>
+      {%endif%}
     </div>
 </nav>
 
@@ -35,6 +47,12 @@
 
 
 
+    <!-- JQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="{% static 'js/custom.js' %}"></script>
+    
 
     <!-- Optional JavaScript; choose one of the two! -->
 
