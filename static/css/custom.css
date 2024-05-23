@@ -1,4 +1,10 @@
-
+.home-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+}
 
 
 /* export data page */
@@ -9,13 +15,35 @@
   }
 
   .form-container{
-      max-width: 40rem !important;
+      max-width: 35rem !important;
       margin: auto; /* Centers the container horizontally */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow effect */
       padding: 20px; /* Adds some padding inside the container */
-      background-color: white; /* Adds a background color */
       border-radius: 8px; /* Optional: adds rounded corners */
 
+  }
+
+  /* import data */
+
+  #import-data {
+    background-color:#cfe2ff;; /* Adds a background color */
+  }
+
+  #import-data label {
+    color: #084298;
+    font-weight: 600;
+  }
+
+
+  /* export data */
+
+  #export-data {
+    background-color:#d1e7dd;
+  }
+
+  #export-data label {
+    color: #0f5132;
+    font-weight: 600;
   }
 
 

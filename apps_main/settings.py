@@ -40,10 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dataentry',
     'uploads',
+    'emails',
     
     # Crispy form
     "crispy_forms",
     "crispy_bootstrap5",
+    
+    # Ckeditor
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -172,4 +176,16 @@ DEFAULT_TO_EMAIL = 'ogwuegbumaxwell@gmail.com'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
+
+# CKeditor
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        # 'width': 300,
+    },
+}
 
