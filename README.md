@@ -11,3 +11,38 @@
 ![Screenshot (146)](https://github.com/OgwuegbuMaxwell/django_automation_apps/assets/53094485/d035bac4-cf21-4c06-bb77-25b7ff196e23)
 
 
+# Django Automation Apps
+
+## Introduction
+
+Django Automation Apps is a comprehensive suite of applications built with the Django framework, designed to automate tasks across multiple domains including student management, customer relations, and employee data handling. It also integrates functionalities for automated email communications and robust file management systems.
+
+## Features
+
+- **Data Entry**: Manage data for students, customers, and employees through a user-friendly interface.
+- **Email Automation**: Automate sending emails with attachments and manage subscriptions through custom lists.
+- **File Uploads**: Facilitate the uploading and management of files associated with different models.
+- **Custom Utilities**: Includes utilities for exporting data to CSV files, sending notifications via email, and handling CSV imports.
+
+## Models
+
+### Data Entry App
+- `Student`: Manages student data with fields like roll number, name, and age.
+- `Customer`: Manages customer information.
+- `Employee`: Handles comprehensive details about employees including financials.
+
+### Emails App
+- `List`: Represents a mailing list.
+- `Subscriber`: Links subscribers to specific email lists.
+- `Email`: Manages the emails sent to lists with rich text content and optional attachments.
+
+### Uploads App
+- `Upload`: Handles file uploads and stores references to the associated models.
+
+## Installation
+
+To set up the project locally, follow these steps:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/django_automation_apps.git
