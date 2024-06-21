@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     
     # Ckeditor
     'ckeditor',
+    
+    # Anymail
+     'anymail',
 ]
 
 MIDDLEWARE = [
@@ -161,11 +164,11 @@ CELERY_BROKER_URL = 'redis://localhost:6379'
 
 # Email Configuration
 
-EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT', cast=int)
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD= config('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS = True
+# EMAIL_HOST = config('EMAIL_HOST')
+# EMAIL_PORT = config('EMAIL_PORT', cast=int)
+# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD= config('EMAIL_HOST_PASSWORD')
+# EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Automate with Django <max.django.foodonline@gmail.com>'
 DEFAULT_TO_EMAIL = 'ogwuegbumaxwell@gmail.com'
 
@@ -188,4 +191,14 @@ CKEDITOR_CONFIGS = {
         # 'width': 300,
     },
 }
+
+
+
+# Anyeamil
+EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"  
+ANYMAIL = {
+    "SENDINBLUE_API_KEY": config("SENDINBLUE_API_KEY"),
+    
+}
+
 
