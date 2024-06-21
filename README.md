@@ -46,3 +46,42 @@ To set up the project locally, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/your-username/django_automation_apps.git
+
+1. **Navigate to the project directory:**
+`cd django_automation_apps
+`
+
+3. **Install dependencies:**
+`pip install -r requirements.txt
+`
+
+4. **Apply migrations:**
+`python manage.py makemigrations
+`
+`python manage.py migrate
+`
+
+5. **Run the development server:**
+`python manage.py runserver
+`
+
+Access the application via http://127.0.0.1:8000 in your web browser.
+
+
+### Configuration
+
+**Ensure you configure the following in your settings.py:**
+
+- DATABASES to link to your database of choice.
+- SECRET_KEY for security measures.
+- DEBUG should be set to False in a production environment.
+
+**Utilizing Utilities**
+
+- Email Notifications: To send email notifications, utilize the send_email_notification function provided in utils.py.
+- CSV Operations: For exporting and validating CSV data against Django models, use the corresponding functions in utils.py.
+- 
+
+
+
+
