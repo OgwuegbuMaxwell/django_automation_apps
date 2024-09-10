@@ -42,6 +42,8 @@ def send_email(request):
                 attachement = email_form.attachment.path
             else:
                 attachement = None
+                
+            # print('send_emailexecuted......................')
             
             # send the email using celery || or send it here directly
             # send_email_notifictation(mail_subject, message, to_email, attachement)

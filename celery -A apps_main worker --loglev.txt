@@ -1,5 +1,0 @@
-celery -A apps_main worker --loglevel=info --pool=solo
-
-.\env\scripts\activate
-
-.\env\scripts\activate

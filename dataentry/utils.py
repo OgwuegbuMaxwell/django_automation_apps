@@ -65,6 +65,7 @@ def check_csv_errors(file_path, model_name):
 
 
 def send_email_notifictation(mail_subject, message, to_email, attachment=None):
+    print('Trying to send email.............')
     try:
         from_email = settings.DEFAULT_FROM_EMAIL
         mail = EmailMessage(mail_subject, message, from_email, to=to_email)
@@ -72,6 +73,7 @@ def send_email_notifictation(mail_subject, message, to_email, attachment=None):
             mail.attach_file(attachment)
         
         mail.content_subtype = "html"
+        print("trying to send email........................")
         mail.send()
     except Exception as e:
         raise e
