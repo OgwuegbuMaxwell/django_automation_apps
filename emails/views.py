@@ -43,7 +43,6 @@ def send_email(request):
             else:
                 attachement = None
                 
-            # print('send_emailexecuted......................')
             
             # send the email using celery || or send it here directly
             # send_email_notifictation(mail_subject, message, to_email, attachement)
