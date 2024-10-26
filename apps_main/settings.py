@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast = bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -202,3 +202,5 @@ ANYMAIL = {
 }
 
 
+CSRF_TRUSTED_ORIGINS = ['https://a1cf-98-97-79-194.ngrok-free.app']
+BASE_URL = 'https://a1cf-98-97-79-194.ngrok-free.app'
