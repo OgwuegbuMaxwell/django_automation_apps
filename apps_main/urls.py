@@ -35,4 +35,7 @@ urlpatterns = [
     # forward to emaill app
     path('emails/', include('emails.urls')),
     
+    # Image Compression
+    path('image-compression/', include('image_compression.urls')),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
