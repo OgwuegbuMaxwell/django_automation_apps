@@ -49,7 +49,9 @@
 
 
     <!-- JQuery CDN -->
+    {% if 'webscraping/stocks' not in request.path %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    {%endif%}
 
     <!-- Custom JS -->
     <script src="{% static 'js/custom.js' %}"></script>

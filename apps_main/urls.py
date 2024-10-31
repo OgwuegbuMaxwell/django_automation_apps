@@ -38,4 +38,7 @@ urlpatterns = [
     # Image Compression
     path('image-compression/', include('image_compression.urls')),
     
+    # Stock Market Analysis
+    path('webscraping/', include('stockanalysis.urls'))
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -7,8 +7,18 @@
 
 ![Screenshot (147)](https://github.com/OgwuegbuMaxwell/django_automation_apps/assets/53094485/d4e98741-684e-4382-95a3-49f15271b1d3)
 
+![Screenshot (198)](https://github.com/user-attachments/assets/26f45bbc-5047-440f-88b0-6c810f12fd78)
+
+![Screenshot (199)](https://github.com/user-attachments/assets/b7efd79c-c145-40c5-a13e-6417609fdacb)
+
+![Screenshot (201)](https://github.com/user-attachments/assets/3e63ca05-f4f5-4b0a-861d-3f06c1cc7f95)
+
+![Screenshot (202)](https://github.com/user-attachments/assets/ee6307a1-636d-4ce6-91ca-73384cbb9dc8)
+
 
 ![Screenshot (146)](https://github.com/OgwuegbuMaxwell/django_automation_apps/assets/53094485/d035bac4-cf21-4c06-bb77-25b7ff196e23)
+
+
 
 
 # Django Automation Apps
